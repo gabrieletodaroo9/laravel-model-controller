@@ -10,15 +10,13 @@ class homeCard extends Component
 {
     public $movie;
 
-
-    
     public function __construct($movie)
     {
         $this->movie = $movie;
     }
 
 
-
+    
     public function getStarsFill()
     {
         return round($this->movie->vote);
