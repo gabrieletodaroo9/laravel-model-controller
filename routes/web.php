@@ -3,4 +3,6 @@
 use App\Http\Controllers\Guest\PageController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [PageController::class,"home"]);
+Route::get('/', [PageController::class,"home"])->name("home");
+
+Route::get('/{id}', [PageController::class,"detail"])->name("detail");

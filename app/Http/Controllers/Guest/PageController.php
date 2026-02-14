@@ -15,4 +15,12 @@ class PageController extends Controller
         $topRated = Movie::orderBy("vote", "desc")->limit(3)->get();
         return view("home", compact("movies","topRated"));
     }
+
+    public function detail($id)
+    {
+
+        $movie = Movie::findOrFail($id);
+        return view("detail", compact("movie"));
+    }
+
 }
