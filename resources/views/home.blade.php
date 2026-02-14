@@ -9,9 +9,7 @@
             <div class="row row-cols-3 d-flex justify-content-start align-items-center text-center g-5 my-3">
                 @foreach($movies as $movie)
                 <div class="col">
-                    <a href="{{ route( 'detail' , $movie->id )}}">
-                        {{$movie["title"]}}
-                    </a>
+                    <x-homeCard :movie="$movie"></x-homeCard>
                 </div>
                 @endforeach
             </div>
@@ -21,9 +19,7 @@
 
                 @foreach($topRated as $movie)
                 <div class="col">
-                    <a href="{{ route( 'detail' , $movie->id )}}">
-                        {{$movie["title"]}}
-                    </a>
+                    <x-homeCard :movie="$movie"></x-homeCard>
                 </div>
                 @endforeach
             </div>
