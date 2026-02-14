@@ -8,10 +8,11 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function home(){
+    public function home()
+    {
 
-    $movies= Movie::all();
-
-        return view("home", compact("movies"));
+        $movies = Movie::all();
+        $topRated = Movie::orderBy("vote", "desc")->limit(3)->get();
+        return view("home", compact("movies","topRated"));
     }
 }
